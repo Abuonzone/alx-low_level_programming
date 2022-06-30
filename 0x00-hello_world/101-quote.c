@@ -5,9 +5,9 @@
  */
 int main(void)
 {
-	char print[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+	char prt[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
 
-	fprintf(stderr, print, "\n");
+	fprintf(stderr, prt, "\n");
 	return (1);
 }
 
