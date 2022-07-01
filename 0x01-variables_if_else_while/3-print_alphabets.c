@@ -6,13 +6,14 @@
 int main(void)
 {
 	char n = 'a';
-	char x = 'A';
 
 	while (n <= 'z')
 	{
 		putchar(n);
 		n = n + 1;
 	}
+	char x = 'A';
+
 	while (x <= 'Z')
 	{
 		putchar(x);
