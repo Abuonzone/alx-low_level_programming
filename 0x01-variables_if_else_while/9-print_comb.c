@@ -5,7 +5,9 @@
  */
 int main(void)
 {
-	for (char n = 0; n < 10; n++)
+	char n;
+
+	for (n = 0; n < 10; n++)
 	{
 		putchar(n + 48);
 		if (n < 9)
