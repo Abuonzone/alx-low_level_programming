@@ -14,9 +14,11 @@ void times_table(void)
 		{
 			y = n * x;
 			printf("%d", y);
-			printf(",");
-			if (n < 9)
+			if (x < 9)
+			{
+				printf(",");
 				printf(" ");
+			}
 		}
 		printf("\n");
 	}
