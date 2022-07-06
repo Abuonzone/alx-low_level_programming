@@ -10,13 +10,17 @@ int fibonacci(int n)
 
 	for (i = 1; i <= n; i++)
 	{
+		if (i == 0)
+			continue;
 		if (i == 1)
 		{
 			a[i] = i;
+			printf("%d, ", a[i]);
 		}
 		else
 		{
 			a[i] = a[i-1] + a[i-2];
+			printf("%d, ", a[i]);
 		}
 	}
 	return a[n];
@@ -24,11 +28,6 @@ int fibonacci(int n)
 
 int main(void)
 {
-	int x;
-
-	for (x = 1; x <= 50; x++)
-	{
-		printf("%d, ", fibonacci(x));
-	}
+	fibonacci(50);
 	return (0);
 }
