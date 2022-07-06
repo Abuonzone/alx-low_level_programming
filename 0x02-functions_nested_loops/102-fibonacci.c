@@ -5,7 +5,7 @@
  */
 int fibonacci(int n)
 {
-	int a[n];
+	int a[51];
 	int i;
 
 	for (i = 1; i <= n; i++)
