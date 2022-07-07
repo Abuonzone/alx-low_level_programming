@@ -20,5 +20,6 @@ void print_line(int n)
 			_putchar('-');
 			i++;
 		}
+		_putchar('\n');
 	}
 }
