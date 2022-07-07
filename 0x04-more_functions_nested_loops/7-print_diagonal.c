@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * print_line - Draw a straight line in the terminal
+ * print_diagonal - Draw a diagonal line in the terminal
  * @n: parameter
  * Return: void
  */
-void print_line(int n)
+void print_diagonal(int n)
 {
 	if (n <= 0)
 	{
