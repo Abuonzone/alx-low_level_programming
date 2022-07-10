@@ -14,15 +14,21 @@ void print_triangle(int n)
 	{
 		int i;
 
-		for (i = 1; i <= n; i++)
+		for (i = 0; i < n; i++)
 		{
-			int j;
-
-			for (j = 1; j < n - 1; j++)
+			int k = i;
+			while (k < n - 1)
 			{
 				_putchar(' ');
+				k++;
 			}
-			_putchar('#');
+			
+			int l = i;
+			while (l >= 0)
+			{
+				_putchar('#');
+				l--;
+			}
 			_putchar('\n');
 		}
 	}
