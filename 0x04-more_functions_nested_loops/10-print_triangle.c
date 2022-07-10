@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "main.h"
 
 /**
@@ -16,16 +17,16 @@ void print_triangle(int size)
 		{
 			int k;
 
-			for (k = i; k < size - 1; k++)
+			for (k = i; k < ; k++)
 			{
-				_putchar(' ');
-			}
-
-			int l;
-
-			for (l = i; l >= 0; l--)
-			{
-				_putchar('#');
+				if (k < size - 1)
+				{
+					_putchar(' ');
+				}
+				else
+				{
+					_putchar('#');
+				}
 			}
 			_putchar('\n');
 		}
