@@ -1,12 +1,12 @@
 #include "main.h"
 /**
  * print_triangle - Draw a triangle in the terminal
- * @n: parameter
+ * @size: parameter
  * Return: void
  */
-void print_triangle(int n)
+void print_triangle(int size)
 {
-	if (n <= 0)
+	if (size <= 0)
 	{
 		_putchar('\n');
 	}
@@ -14,16 +14,18 @@ void print_triangle(int n)
 	{
 		int i;
 
-		for (i = 0; i < n; i++)
+		for (i = 0; i < size; i++)
 		{
 			int k = i;
-			while (k < n - 1)
+
+			while (k < size - 1)
 			{
 				_putchar(' ');
 				k++;
 			}
-			
+
 			int l = i;
+
 			while (l >= 0)
 			{
 				_putchar('#');
