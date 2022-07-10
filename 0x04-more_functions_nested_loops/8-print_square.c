@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * print_square - Draw a diagonal line in the terminal
- * @n: parameter
+ * @size: parameter
  * Return: void
  */
 void print_square(int size)
