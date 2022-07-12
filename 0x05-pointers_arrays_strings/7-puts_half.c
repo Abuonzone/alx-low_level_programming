@@ -11,7 +11,7 @@ void puts_half(char *str)
 {
 	int i;
 	int x = strlen(str);
-	int n = x\2;
+	int n = x / 2;
 
 	for (i = n; i < x; i++)
 	{
