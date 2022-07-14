@@ -10,14 +10,14 @@
 void reverse_array(int *a, int n)
 {
 	int b[n];
-	int i;
-	int x;
+	int i, x, c;
 
 	for (i = 0; i < n; i++)
 	{
 		b[i] = a[(n - 1) - i];
 	}
-	for (x = 0; x < i; x++)
+	c = sizeof(b) / sizeof(int);
+	for (x = 0; x < c; x++)
 	{
 		a[x] = b[x];
 	}
