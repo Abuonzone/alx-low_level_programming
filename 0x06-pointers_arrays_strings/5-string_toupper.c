@@ -3,7 +3,7 @@
 #include <ctype.h>
 
 /**
- * string_toupper(char *)
+ * string_toupper - change string to uppercase
  * @n: parameter
  * Return: char
  */
@@ -15,7 +15,7 @@ char *string_toupper(char *n)
 
 	for (i = 0; i < strlen(n); i++)
 	{
-		if(!(isupper(n[i])))
+		if (!(isupper(n[i])))
 		{
 			n[i] = toupper((unsigned char) n[i]);
 		}
