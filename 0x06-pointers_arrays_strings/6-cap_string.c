@@ -15,10 +15,7 @@ char *cap_string(char *n)
 
 	for (i = 0; i < str_len; i++)
 	{
-		if (!(isupper(n[i])))
-		{
-			n[i] = towupper((unsigned char) n[i]);
-		}
+		n[i] = towupper((unsigned char) n[i]);
 	}
 	return (n);
 }
