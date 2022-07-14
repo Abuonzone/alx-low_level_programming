@@ -17,7 +17,7 @@ char *string_toupper(char *n)
 	{
 		if(!(isupper(n[i])))
 		{
-			n[i] = isupper(n[i]);
+			n[i] = toupper(n[i]);
 		}
 	}
 	return (n);
