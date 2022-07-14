@@ -10,5 +10,15 @@
 
 char *_strcat(char *dest, char *src)
 {
-	return (strcat(*dest, *src));
+	size_t n;
+	size_t str_len = strlen(dest);
+	int i;
+
+	for (i = 0; i < n && src[i] != '\0'; i++)
+	{
+		dest[str_len + i] = src[i];
+	}
+	dest[str_len + i];
+
+	return (dest);
 }
