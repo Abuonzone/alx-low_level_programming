@@ -13,7 +13,7 @@ char *string_toupper(char *n)
 	size_t i;
 	size_t str_len = strlen(n);
 
-	for (i = 0; i < strlen(n); i++)
+	for (i = 0; i < str_len; i++)
 	{
 		if (!(isupper(n[i])))
 		{
