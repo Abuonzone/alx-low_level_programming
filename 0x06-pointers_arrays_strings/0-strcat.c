@@ -10,7 +10,7 @@
 
 char *_strcat(char *dest, char *src)
 {
-	size_t n;
+	size_t n = 32;
 	size_t str_len = strlen(dest);
 	size_t i;
 
