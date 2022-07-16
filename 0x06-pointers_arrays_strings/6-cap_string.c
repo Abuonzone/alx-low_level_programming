@@ -15,7 +15,8 @@ char *cap_string(char *n)
 
 	for (i = 0; i < str_len; i++)
 	{
-		n[i] = towupper((unsigned char) n[i]);
+		if (n[i] == ' ' || n[i] == '\t' || n[i] == '\n' || n[i] == ',' || n[i] == ';' || n[i] == '.' || n[i] == '!' || n[i] == '?' || n[i] == '"' || n[i] == '(' || n[i] == ')' || n[i] == '{' || n[i] == '}')
+			n[i + 1] = toupper((unsigned char) n[i]);
 	}
 	return (n);
 }
