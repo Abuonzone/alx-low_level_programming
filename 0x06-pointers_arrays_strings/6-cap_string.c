@@ -13,13 +13,13 @@ char *cap_string(char *n)
 	int i, x;
 	int n_len = strlen(n);
 	int str[] = {32, 8, 10, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125}
-	int str_len = strlen(str);
+	int str_len = sizeof(str) / sizeof(int);
 
 	for (x = 0; x < str_len && str[x] != '\0'; x++)
 	{
-		if (i = 0; i < n_len && n[i] != '\0'; i++)
+		for (i = 0; i < (n_len - 1) && n[i] != '\0'; i++)
 		{
-			if(n[i] == str[x])
+			if (n[i] == str[x])
 			{
 				n[i] = toupper((unsigned char) n[i]);
 			}
