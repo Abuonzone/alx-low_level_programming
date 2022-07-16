@@ -15,10 +15,12 @@ char *cap_string(char *n)
 	int str[] = {32, 9, 10, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
 	int str_len = sizeof(str) / sizeof(int);
 
-	for (x = 0; x < str_len && str[x] != '\0'; x++)
+	for (x = 1; x < str_len && str[x] != '\0'; x++)
 	{
 		for (i = 0; i < n_len && n[i] != '\0'; i++)
 		{
+			if (n[i] == str[0])
+				n[i + 1] = toupper((unsigned char) n[i + 1]);
 			if (n[i] == str[x])
 			{
 				n[i + 1] = toupper((unsigned char) n[i + 1]);
