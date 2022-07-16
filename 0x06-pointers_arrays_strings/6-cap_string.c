@@ -21,7 +21,7 @@ char *cap_string(char *n)
 		{
 			if (n[i] == str[x])
 			{
-				n[i] = toupper((unsigned char) n[i]);
+				n[i + 1] = toupper((unsigned char) n[i + 1]);
 			}
 		}
 	}
