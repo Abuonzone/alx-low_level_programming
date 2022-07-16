@@ -19,9 +19,9 @@ char *cap_string(char *n)
 	{
 		for (i = 0; i < n_len && n[i] != '\0'; i++)
 		{
-			if (n[i] == str[0])
+			if (n[i] == ' ')
 				n[i + 1] = toupper((unsigned char) n[i + 1]);
-			if (n[i] == str[x] && n[i + 1] != str[0])
+			if (n[i] == str[x] && n[i + 1] != ' ')
 			{
 				n[i + 1] = toupper((unsigned char) n[i + 1]);
 			}
