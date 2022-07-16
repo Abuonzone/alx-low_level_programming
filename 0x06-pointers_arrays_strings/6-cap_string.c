@@ -10,19 +10,20 @@
 
 char *cap_string(char *n)
 {
-	size_t i;
-	size_t str_len = strlen(n);
+	int i, x;
+	int n_len = strlen(n);
+	int str[] = {32, 8, 10, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125}
+	int str_len = strlen(str);
 
-	for (i = 0; i < str_len; i++)
+	for (x = 0; x < str_len && str[x] != '\0'; x++)
 	{
-		if (n[i] == ' ' || n[i] == '\t' || n[i] == '\n')
-			n[i + 1] = toupper((unsigned char) n[i + 1]);
-		else if (n[i] == ',' || n[i] == ';')
-			n[i + 1] = toupper((unsigned char) n[i + 1]);
-		else if (n[i] == '.' || n[i] == '!' || n[i] == '?' || n[i] == 34)
-			n[i + 1] = toupper((unsigned char) n[i + 1]);
-		else if (n[i] == '(' || n[i] == ')' || n[i] == '{' || n[i] == '}')
-			n[i + 1] = toupper((unsigned char) n[i + 1]);
+		if (i = 0; i < n_len && n[i] != '\0'; i++)
+		{
+			if(n[i] == str[x])
+			{
+				n[i] = toupper((unsigned char) n[i]);
+			}
+		}
 	}
 	return (n);
 }
