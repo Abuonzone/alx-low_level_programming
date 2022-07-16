@@ -17,7 +17,7 @@ char *cap_string(char *n)
 
 	for (x = 0; x < str_len && str[x] != '\0'; x++)
 	{
-		for (i = 0; i < (n_len - 1) && n[i] != '\0'; i++)
+		for (i = 0; i < n_len && n[i] != '\0'; i++)
 		{
 			if (n[i] == str[x])
 			{
