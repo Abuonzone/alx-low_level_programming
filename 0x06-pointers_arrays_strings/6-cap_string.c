@@ -19,7 +19,7 @@ char *cap_string(char *n)
 			n[i + 1] = toupper((unsigned char) n[i + 1]);
 		else if (n[i] == ',' || n[i] == ';')
 			n[i + 1] = toupper((unsigned char) n[i + 1]);
-		else if (n[i] == '.' || n[i] == '!' || n[i] == '?' || n[i] == '"')
+		else if (n[i] == '.' || n[i] == '!' || n[i] == '?' || n[i] == '\"')
 			n[i + 1] = toupper((unsigned char) n[i + 1]);
 		else if (n[i] == '(' || n[i] == ')' || n[i] == '{' || n[i] == '}')
 			n[i + 1] = toupper((unsigned char) n[i + 1]);
