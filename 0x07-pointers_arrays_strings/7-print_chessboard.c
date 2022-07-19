@@ -9,8 +9,8 @@
 void print_chessboard(char (*a)[8])
 {
 	int i, j;
-	int row = sizeof(*a) / sizeof(*a[0]);
-	int column = sizeof(*a[0]) / sizeof(*a[0][0]);
+	int row = sizeof(a);
+	int column = sizeof(a[0]) / sizeof(a[0][0]);
 
 	for (i = 0; i < row; i++)
 	{
