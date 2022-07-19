@@ -4,7 +4,7 @@
 /**
  * _strspn - A Function that get the length of a prefix substring
  * @s: The string pointer
- * @c: The character to be located
+ * @accept: The character to be located
  * Return: number of bytes
  */
 
