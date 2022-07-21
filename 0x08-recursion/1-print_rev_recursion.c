@@ -19,6 +19,6 @@ void _print_rev_recursion(char *s)
 	}
 	for (j = 0; j < str_len && b[j] != '\0'; j++)
 	{
-		putchar(b[j]);
+		_putchar(b[j]);
 	}
 }
