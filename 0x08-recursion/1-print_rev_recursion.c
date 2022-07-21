@@ -15,11 +15,10 @@ void _print_rev_recursion(char *s)
 
 	for (i = 0; i < str_len && s[i] != '\0'; i++)
 	{
-		*(b + i) = *(s + (str_len - (i + 1)));
+		b[i] = s[str_len - (i + 1)];
 	}
 	for (j = 0; j < str_len && b[j] != '\0'; j++)
 	{
-		*(s + j) = *(b + j);
-		_putchar(s[j]);
+		putchar(b[j]);
 	}
 }
