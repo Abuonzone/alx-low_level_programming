@@ -3,6 +3,8 @@
 
 /**
  * main - a program that ptints it name
+ * @argc: Argument count
+ * @argv: argument vector
  * Return: Always 0
  */
 
