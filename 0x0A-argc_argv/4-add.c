@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "main.h"
+#include <ctype.h>
 
 /**
  * main - a program that ptints it name
@@ -11,9 +12,8 @@
 
 int main(int argc, char *argv[])
 {
-	int i;
+	int i, j;
 	int ans = 0;
-	int err;
 
 
 	if (argc == 0)
@@ -22,25 +22,23 @@ int main(int argc, char *argv[])
 		putchar('\n');
 		return (0);
 	}
-	for (i = 1; i < argc; i++)
-	{
-		if (atoi(argv[i]))
-		{
-			ans += atoi(argv[i]);
-		}
-		else
-		{
-			err = 1;
-			break;
-		}
-	}
-	if (err == 1)
-	{
-		printf("Error\n");
-		return (1);
-	}
 	else
 	{
+		for (i = 1; i < argc; i++)
+		{
+			for (j = 0; j < argv[i][j] && argv[i][j] != '\0'; j++)
+			{
+				if (!(isdigit(argv[i][j])))
+				{
+					printf("Error\n");
+					return (1);
+				}
+				else
+				{
+					ans += atoi(argv[i]);
+				}
+			}
+		}
 		printf("%d\n", ans);
 		return (0);
 	}
