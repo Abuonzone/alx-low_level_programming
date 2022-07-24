@@ -33,11 +33,8 @@ int main(int argc, char *argv[])
 					printf("Error\n");
 					return (1);
 				}
-				else
-				{
-					ans += atoi(argv[i]);
-				}
 			}
+			ans += atoi(argv[i]);
 		}
 		printf("%d\n", ans);
 		return (0);
