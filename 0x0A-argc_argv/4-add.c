@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 	int err;
 
 
-	if (argc == 1)
+	if (argc == 0)
 	{
 		putchar(48);
 		putchar('\n');
