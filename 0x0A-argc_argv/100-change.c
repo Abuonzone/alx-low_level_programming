@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <conio.h>
+#include <math.h>
 
 /**
  * main - entry point
@@ -11,7 +11,7 @@
 
 int main(int argc, char **argv)
 {
-	if (argc > 1)
+	if (argc > 2)
 	{
 		printf("Error\n");
 		return (1);
