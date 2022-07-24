@@ -20,6 +20,7 @@ int main(int argc, char *argv[])
 	{
 		putchar(48);
 		putchar('\n');
+		return (0);
 	}
 	for (i = 1; i < argc; i++)
 	{
