@@ -35,9 +35,11 @@ int main(int argc, char *argv[])
 	if (err == 1)
 	{
 		printf("Error\n");
+		return (1);
 	}
 	else
+	{
 		printf("%d\n", ans);
-
-	return (0);
+		return (0);
+	}
 }
