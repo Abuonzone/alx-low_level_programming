@@ -12,27 +12,21 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	char *s3;
-	char *s4;
+	char *s;
 	unsigned int i;
 
-	s4 = strcat(s1, s2);
-	if (strcat(s1, s2) == NULL)
-	{
-		return ("");
-	}
-
-	s3 = malloc(sizeof(char) * (strlen(s1) + strlen(s2)));
-	if (s3 == NULL)
+	strcat(s1, s2)
+	s = (char *)malloc(sizeof(char) * (strlen(s1) + 1));
+	if (s == NULL)
 	{
 		return (NULL);
 	}
 
 	i = 0;
-	while (i < strlen(s4))
+	while (i < strlen(s1))
 	{
-		s3[i] = s4[i];
+		s[i] = s1[i];
 		i++;
 	}
-	return (s3);
+	return (s);
 }
