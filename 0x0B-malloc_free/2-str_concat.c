@@ -13,9 +13,10 @@
 char *str_concat(char *s1, char *s2)
 {
 	char *s3;
-	char s4[] = strcat(s1, s2);
+	char *s4;
 	unsigned int i;
 
+	s4 = strcat(s1, s2);
 	if (strcat(s1, s2) == NULL)
 	{
 		return ("");
