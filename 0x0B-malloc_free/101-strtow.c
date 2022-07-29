@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stddef.h>
+#include <ctype.h>
 
 /**
  * strtow - splits a string into words
@@ -38,11 +39,11 @@ char **strtow(char *str)
 
 	for (j = k = n = 0; n < i; k++, n++)
 	{
-		if (str[n] != '' || str[n] != '\t')
+		if (isalpha(str[n]))
 		{
 			strings[j][k] = str[n];
 		}
-		if (str[n] == '' || str[n] == '\t')
+		if (!isalpha(str[n]))
 		{
 			j++;
 			k = 0;
