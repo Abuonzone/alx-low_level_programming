@@ -38,11 +38,11 @@ char **strtow(char *str)
 
 	for (j = k = n = 0; n < i; k++, n++)
 	{
-		if (str[n] != "" || str[n] != '\t')
+		if (str[n] != '' || str[n] != '\t')
 		{
 			strings[j][k] = str[n];
 		}
-		if (str[n] == "" || str[n] == '\t')
+		if (str[n] == '' || str[n] == '\t')
 		{
 			j++;
 			k = 0;
