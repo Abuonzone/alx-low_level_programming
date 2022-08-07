@@ -20,8 +20,10 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		if (i < n - 1)
 		{
 			if (sep == '\0')
+			{
 				printf(" ");
 				continue;
+			}
 			else
 				printf("%c ", sep);
 		}
