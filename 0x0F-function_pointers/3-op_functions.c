@@ -38,8 +38,7 @@ int op_mul(int a, int b)
  */
 int op_div(int a, int b)
 {
-	int div = a / b;
-	return (div);
+	return (a / b);
 }
 /**
  * op_mod - Modulus
