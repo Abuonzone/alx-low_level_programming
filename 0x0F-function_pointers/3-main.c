@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	}
-	
+
 	arg1 = atoi(argv[1]);
 	arg2 = atoi(argv[3]);
 	if (!f)
