@@ -17,15 +17,13 @@ int main(int argc, char *argv[])
 	arg1 = atoi(argv[1]);
 	arg2 = atoi(argv[3]);
 	result = f(arg1, arg2);
-	printf("%d\n", result);
-	printf("%d\n", argc);
 
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-
+	op = *argv[2];
 	if ((op == '/' || op == '%') && arg2 == 0)
 	{
 		printf("Error\n");
