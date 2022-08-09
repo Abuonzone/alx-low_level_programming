@@ -1,10 +1,10 @@
 #include "3-calc.h"
+#include <stdlib.h>
 /**
  * get_op_func - Get the operators function to be used
  * @s: The operator passed as an argument
  * Return: int
  */
-
 int (*get_op_func(char *s))(int, int)
 {
 	op_t ops[] = {
@@ -15,13 +15,16 @@ int (*get_op_func(char *s))(int, int)
 		{"%", op_mod},
 		{NULL, NULL}
 	};
-	int i;
+	unsigned int i;
 
 	i = 0;
-	while (ops[i].op)
+	while (i < (sizeof(ops)/sizeof(ops[0])))
 	{
-		if (strcmp(ops[i].op, s) == 0)
+		if (strcmp(s, ops[i].op) == 0)
+		{
 			return (ops[i].f);
+		}
 		i++;
 	}
+	return (NULL);
 }
