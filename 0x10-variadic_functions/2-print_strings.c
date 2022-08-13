@@ -24,7 +24,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		{
 			if (!sep)
 			{
-				printf(" ");
+				printf("");
 			}
 			else
 				printf("%c ", sep);
