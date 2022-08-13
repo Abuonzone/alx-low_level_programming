@@ -19,7 +19,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		if (va_arg(ap, char *))
 			printf("(nil)");
 		else
-			printf("%s", va_arg(ap, int));
+			printf("%s", va_arg(ap, char *));
 		if (i < n - 1)
 		{
 			if (!sep)
