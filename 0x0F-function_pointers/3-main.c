@@ -9,11 +9,9 @@
 
 int main(int argc, char *argv[])
 {
-	int (*f)(int a, int b);
 	int arg1, arg2, result;
 	char op;
-
-	f = get_op_func(argv[2]);
+	int (*f)(int, int);
 
 	if (argc != 4)
 	{
@@ -23,6 +21,9 @@ int main(int argc, char *argv[])
 
 	arg1 = atoi(argv[1]);
 	arg2 = atoi(argv[3]);
+
+	f = get_op_func(argv[2]);
+
 	if (!f)
 	{
 		printf("Error\n");
