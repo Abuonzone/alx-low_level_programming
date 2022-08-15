@@ -31,7 +31,7 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 				prev = temp;
 				if (prev == NULL)
 				{
-					return (NULL);
+					break;
 				}
 				temp = temp->next;
 			}
