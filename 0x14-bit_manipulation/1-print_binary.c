@@ -17,12 +17,19 @@ void print_binary(unsigned long int n)
 		num_d = num_d >> 1;
 		bit_num++;
 	}
-	for (i = bit_num - 1; i >= 0; i--)
+	if (bit_num == 0)
 	{
-		k = n >> i;
-		if (k & 1)
-			putchar(49);
-		else
-			putchar(48);
+		_putchar(48);
+	}
+	else
+	{
+		for (i = bit_num - 1; i >= 0; i--)
+		{
+			k = n >> i;
+			if (k & 1)
+				_putchar(49);
+			else
+				_putchar(48);
+		}
 	}
 }
