@@ -8,8 +8,8 @@
  */
 void print_binary(unsigned long int n)
 {
-	int i, k;
-	int num_d, bit_num = 0;
+	unsigned long int i, k;
+	unsigned long int num_d, bit_num = 0;
 
 	num_d = n;
 	while (num_d > 0)
