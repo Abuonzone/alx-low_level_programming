@@ -6,7 +6,7 @@
  * @n: n parameter
  * @m: m parameter
  */
-unsigned int clear_bit(unsigned long int n, unsigned long int m)
+unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
 	unsigned int nbits;
 
