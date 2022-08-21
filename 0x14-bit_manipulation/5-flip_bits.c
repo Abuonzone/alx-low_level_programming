@@ -5,6 +5,7 @@
  * to get from one number to another
  * @n: n parameter
  * @m: m parameter
+ * Return: unsigned int
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
