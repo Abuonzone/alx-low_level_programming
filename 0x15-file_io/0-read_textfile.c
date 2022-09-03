@@ -16,21 +16,21 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
 	int sz;
+	char *str;
 
-	if (filename == NULL)
-		return (0);
-
-	fd = open(filename, O_RDWR | O_CREAT);
-
-	if (fd < 0)
-		return (0);
-
-	sz = write(fd, filename, letters);
-	if (!sz)
+	str = malloc(letters * sizeof(char));
+	if (str == NULL)
 	{
+		free(str);
 		return (0);
 	}
-	close(fd)
-	write(1, filename, letters);
+	if (filename == NULL)
+		return (0);
+	fd = open(filename, O_RDWR | O_CREAT, 0);
+	if (fd < 0)
+		return (0);
+	sz = read(fd, str, letters);
+	str[sz] = '\0';
+	write(1, str, sz);
 	return (sz);
 }
