@@ -13,21 +13,23 @@ int create_file(const char *filename, char *text_content)
 	int i;
 	int wr;
 
-	for (i = 0; text_content[i]; i++)
-		;
 	if (!filename)
 		return (-1);
+	
 	fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0600);
 	if (fd == -1)
 		return (-1);
+
 	if (text_content == NULL)
-		wr = write(fd, "", 1);
-	else
-		wr = write(fd, text_content, i);
+		text_content = "";
+	for (i = 0; text_content[i]; i++)
+		;
+	wr = write(fd, text_content, i);
 
 	if (wr == -1)
 		return (-1);
 
 	close(fd);
+	
 	return (1);
 }
