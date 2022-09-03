@@ -18,11 +18,13 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	char *str;
 
 	str = (char *)malloc(sizeof(char) * (letters));
+	if (!str)
+		return (0);
 
 	if (filename == NULL)
 		return (0);
 	fd = open(filename, O_RDONLY);
-	if (fd < 0)
+	if (fd == -1)
 		return (0);
 	sz = read(fd, str, letters);
 	prt = write(1, str, sz);
