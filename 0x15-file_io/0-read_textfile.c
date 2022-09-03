@@ -3,7 +3,6 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
-#include <string.h>
 #include <stddef.h>
 
 /**
@@ -15,22 +14,21 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
-	int sz;
+	ssize_t sz, prt;
 	char *str;
 
-	str = malloc(letters * sizeof(char));
-	if (str == NULL)
-	{
-		free(str);
-		return (0);
-	}
+	str = (char *)malloc(sizeof(char) * (letters));
+
 	if (filename == NULL)
 		return (0);
-	fd = open(filename, O_RDWR | O_CREAT, 0);
+	fd = open(filename, O_RDONLY);
 	if (fd < 0)
 		return (0);
 	sz = read(fd, str, letters);
-	str[sz] = '\0';
-	write(1, str, sz);
-	return (sz);
+	prt = write(1, str, sz);
+
+	close(fd);
+	free(str);
+
+	return (prt);
 }
