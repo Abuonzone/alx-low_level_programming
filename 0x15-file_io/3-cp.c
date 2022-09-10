@@ -2,7 +2,6 @@
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
-#define BUFFSIZE 1024
 
 /**
  * error_msg - give the error messages as required
@@ -36,8 +35,8 @@ int main(int ac, char **av)
 {
 	int file_from, file_to;
 	int rchars, wchars;
-	int from_close, to_close;
-	char buff[BUFFSIZE];
+	int err_message;
+	char buff[1024];
 
 	if (ac != 3)
 	{
@@ -49,25 +48,25 @@ int main(int ac, char **av)
 	file_to = open(av[2], O_WRONLY | O_CREAT | O_TRUNC | O_APPEND, 0664);
 	error_msg(file_from, file_to, av);
 
-	rchars = BUFFSIZE;
+	rchars = 1024;
 	while (rchars == 1024)
 	{
 		rchars = read(file_from, buff, 1024);
-		if (rchars < 0)
+		if (rchars == -1)
 			error_msg(-1, 0, av);
 		wchars = write(file_to, buff, rchars);
-		if (wchars < 0)
+		if (wchars == -1)
 			error_msg(0, -1, av);
 	}
 
-	from_close = close(file_from);
-	if (from_close < 0)
+	err_message = close(file_from);
+	if (err_message == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
 		exit(100);
 	}
-	to_close = close(file_to);
-	if (to_close < 0)
+	err_message = close(file_to);
+	if (err_message == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
 		exit(100);
