@@ -45,7 +45,7 @@ int main(int ac, char **av)
 	}
 
 	file_from = open(av[1], O_RDONLY);
-	file_to = open(av[2], O_WRONLY | O_CREAT | O_TRUNC | O_APPEND, 0664);
+	file_to = open(av[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
 	error_msg(file_from, file_to, av);
 
 	rchars = 1024;
@@ -68,7 +68,7 @@ int main(int ac, char **av)
 	err_message = close(file_to);
 	if (err_message == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to);
 		exit(100);
 	}
 
