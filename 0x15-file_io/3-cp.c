@@ -41,8 +41,8 @@ int main(int ac, char **av)
 
 	if (ac > 3)
 	{
+		dprintf(STDERR_FILENO, "%s\n", "Usage: cp file_from file_to");
 		exit(97);
-		dprintf(STDERR_FILENO, "cp file_from file_to\n");
 	}
 
 	file_from = open(av[1], O_RDONLY);
