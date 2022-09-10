@@ -3,8 +3,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define BUFFSIZE 1024
+
 /**
- * Write a program that copies the content of a file to another file
+ * error_msg - give the error messages as required
+ * @file_from: arg1
+ * @file_to: arg2
+ * @argv: argument vector
+ * Return: void
+ */
+void error_msg(int file_from, int file_to, char *argv[])
+{
+	if (file_from == -1)
+	{
+		dprintf(STDERR_FILENO, "Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
+	if (file_to == -1)
+	{
+		dprintf(STDERR_FILENO, "Can't write to file %s\n", argv[2]);
+		exit(99);
+	}
+}
+
+/**
+ * main - Write a program that copies the content of a file to another file
  * @ac: Argument count
  * @av: argument vector
  * Return: Always 0 success
@@ -12,8 +34,9 @@
 
 int main(int ac, char **av)
 {
-	int fd1, fd2;
-	int cp1, cp2;
+	int file_from, file_to;
+	int rchars, wchars;
+	int from_close, to_close;
 	char buff[BUFFSIZE];
 
 	if (ac > 3)
@@ -22,39 +45,32 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, "cp file_from file_to\n");
 	}
 
-	fd1 = open(av[1], O_RDONLY);
-	if (fd1 == -1)
+	file_from = open(av[1], O_RDONLY);
+	file_to = open(av[2], O_WRONLY | O_CREAT | O_TRUNC | O_APPEND, 0664);
+	error_msg(file_from, file_to, av);
+
+	rchars = BUFFSIZE;
+	while (rchars == 1024)
 	{
-		exit(98);
-		dprintf(STDERR_FILENO, "Can't read from file %s\n", av[1]);
+		rchars = read(file_from, buff, 1024);
+		if (rchars < 0)
+			error_msg(-1, 0, av);
+		wchars = write(file_to, buff, rchars);
+		if (wchars < 0)
+			error_msg(0, -1, av);
 	}
-	cp1 = read(fd1, buff, sizeof(buff));
-	if (cp1 < 0)
+
+	from_close = close(file_from);
+	if (from_close < 0)
 	{
-		exit(98);
-		dprintf(STDERR_FILENO, "Can't read from file %s\n", av[1]);
-	}
-	if (close(fd1) < 0)
-	{
+		dprintf(STDERR_FILENO, "Can't close fd %d\n", file_from);
 		exit(100);
-		dprintf(STDERR_FILENO, "Can't close fd %d\n", fd1);
 	}
-	fd2 = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	if (fd2 == -1)
+	to_close = close(file_to);
+	if (to_close < 0)
 	{
-		exit(99);
-		dprintf(STDERR_FILENO, "Can't write to %s\n", av[2]);
-	}
-	cp2 = write(fd2, buff, cp1);
-	if (cp2 < 0)
-	{
-		exit(99);
-		dprintf(STDERR_FILENO, "Can't write to %s\n", av[2]);
-	}
-	if (close(fd2) < 0)
-	{
+		dprintf(STDERR_FILENO, "Can't close fd %d\n", file_to);
 		exit(100);
-		dprintf(STDERR_FILENO, "Can't close fd %d\n", fd2);
 	}
 
 	return (0);
