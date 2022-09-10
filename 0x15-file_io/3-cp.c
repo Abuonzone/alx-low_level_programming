@@ -34,7 +34,7 @@ void error_msg(int file_from, int file_to, char *argv[])
 int main(int ac, char **av)
 {
 	int file_from, file_to;
-	int rchars, wchars;
+	ssize_t rchars, wchars;
 	int err_message;
 	char buff[1024];
 
