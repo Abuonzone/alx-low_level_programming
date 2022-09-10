@@ -69,7 +69,7 @@ int main(int ac, char **av)
 	to_close = close(file_to);
 	if (to_close < 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
 		exit(100);
 	}
 
