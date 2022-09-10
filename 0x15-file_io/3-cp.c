@@ -39,7 +39,7 @@ int main(int ac, char **av)
 	int from_close, to_close;
 	char buff[BUFFSIZE];
 
-	if (ac > 3)
+	if (ac != 3)
 	{
 		dprintf(STDERR_FILENO, "%s\n", "Usage: cp file_from file_to");
 		exit(97);
